@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "getQuest",
+    "version": "0.1",
+
+    "description": "get question from testbook",
+    "icons": {
+        "48": "icons/ques.png",
+        "96": "icons/ques.png"
+    },
+    "permissions": ["tabs"],
+    "background": {
+        "scripts": ["scripts/background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["https://testbook.com/*"],
+        "js": [
+            "scripts/getQuest.js",
+            "scripts/axios.js",
+            "scripts/jquery-3.5.1.min.js"
+        ]
+    }],
+    "browser_action": {
+        "default_icon": "icons/ques.png",
+        "default_popup": "popup/popup.html",
+        "default_title": "add question here"
+    }
+}
